@@ -53,3 +53,34 @@ cacheSolve <- function(x) {
     ## I have set this for the storage of inverse matrix for future reference
     inverse
     }
+## checking the code
+mat <- makeCacheMatrix(matrix(c(2, 1, 1, 3), nrow = 2))
+
+# Set a new matrix
+new_mat <- matrix(c(4, 5, 6, 7), nrow = 2)
+mat$set(new_mat)
+
+# Get the matrix using the get function
+current_mat <- mat$get()
+
+# Print the current matrix
+print("Current Matrix:")
+print(current_mat)
+
+# Compute and cache the inverse using cacheSolve
+inverse <- cacheSolve(mat)
+
+# Print the computed inverse
+print("Inverse Matrix:")
+print(inverse)
+
+# Get the cached inverse
+cached_inverse <- mat$cached_inverse
+
+# Print the cached inverse
+print("Cached Inverse Matrix:")
+print(cached_inverse)
+
+
+
+
